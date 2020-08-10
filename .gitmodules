@@ -1,0 +1,6 @@
+[submodule "ILRuntime"]
+	path = ILRuntime
+	url = https://github.com/Ourpalm/ILRuntime.git
+[submodule "tolua"]
+	path = tolua
+	url = https://github.com/topameng/tolua.git
