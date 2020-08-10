@@ -61,7 +61,7 @@ namespace embed
             {
                 var core = _vm.Instantiate("core.Core");
                 _vm.Invoke("core.Core", "InjectGameObject", core, new object[] { this.gameObject });
-                // Test0();
+                Test0();
                 _vm.Invoke("core.Core", "Test0", core, null);
             }
 
@@ -76,6 +76,7 @@ namespace embed
 
         private IEnumerator LoadAndInitCore()
         {
+            Debug.Log("download dll from " + url);
             UnityWebRequest www_dll = UnityWebRequest.Get(String.Join("/", new string[] { url, "core.dll" }));
             yield return www_dll.SendWebRequest();
             _fs = new MemoryStream(www_dll.downloadHandler.data);
@@ -87,25 +88,27 @@ namespace embed
             _vm = new ILRuntime.Runtime.Enviorment.AppDomain();
             _vm.LoadAssembly(_fs, null, new ILRuntime.Mono.Cecil.Pdb.PdbReaderProvider());
 
-            // ILRuntime.Runtime.Generated.CLRBindings.Initialize(_vm);
+            ILRuntime.Runtime.Generated.CLRBindings.Initialize(_vm);
 
-            // _vm.RegisterValueTypeBinder(typeof(Vector3), new Vector3Binder());
-            // _vm.RegisterValueTypeBinder(typeof(Quaternion), new QuaternionBinder());
-            // _vm.RegisterValueTypeBinder(typeof(Vector2), new Vector2Binder());
+            _vm.RegisterValueTypeBinder(typeof(Vector3), new Vector3Binder());
+            _vm.RegisterValueTypeBinder(typeof(Quaternion), new QuaternionBinder());
+            _vm.RegisterValueTypeBinder(typeof(Vector2), new Vector2Binder());
         }
 
         public void Test0()
         {
-            float time = Time.realtimeSinceStartup;
-
-            for (int i = 0; i < 200000; i++)
             {
-                Vector3 v = transform.position;
-                transform.position = v + Vector3.one;
-            }
+                float time = Time.realtimeSinceStartup;
 
-            time = Time.realtimeSinceStartup - time;
-            Debug.Log("c# Transform getset cost time: " + time);
+                for (int i = 0; i < 200000; i++)
+                {
+                    Vector3 v = transform.position;
+                    transform.position = Vector3.Normalize(v + Vector3.Cross(v, Vector3.one));
+                }
+
+                time = Time.realtimeSinceStartup - time;
+                Debug.Log("c# Transform getset cost time: " + time);
+            }
         }
     }
 }

@@ -72,18 +72,38 @@ crashlytics-build.properties
 
 # Custom
 /Assets/Editor/Plugins/editor.*
+
 /Assets/Plugins/embed.*
 /Assets/Plugins/ILRuntim.Mono.Cecil.*
 /Assets/Plugins/ILRuntime.Mono.Cecil.Mdb.*
 /Assets/Plugins/ILRuntime.Mono.Cecil.Pdb.*
 
+/Assets/Plugins/Android/libs/*/*tolua*
+/Assets/Plugins/iOS/*tolua*
+/Assets/Plugins/tolua.bundle/
+/Assets/Plugins/tolua.bundle.meta
+/Assets/Plugins/x86/*tolua*
+/Assets/Plugins/x86_64/*tolua*
+/Assets/Plugins/CString.dll*
+/Assets/Plugins/Debugger.dll*
+
+/Assets/Source*
+/Assets/ToLua*
+/Assets/link*
+
 /bin/
 /dev/*/bin/
 /dev/*/obj/
+/dev/*/Generated/
 /dev/*/Dependencies/
 /dev/*/ILRuntime/
 
+/Luajit/
+/Luajit64/
+
 /out/
+
+/Assets/Resources/Lua*
 
 /tools/nginx/contrib
 /tools/nginx/docs

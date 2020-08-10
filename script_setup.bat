@@ -32,3 +32,9 @@ dotnet new classlib -o %PRJ_EDITOR%
 del %PRJ_EDITOR%\*.cs
 dotnet add %PRJ_EDITOR% reference %PRJ_EMBED%
 dotnet sln %DEV_ROOT% add %PRJ_EDITOR%
+
+
+:: setup tolua
+xcopy /Y /E %TOLUA_ROOT%\Assets .\Assets\
+xcopy /Y %TOLUA_ROOT%\Luajit .\Luajit\
+xcopy /Y %TOLUA_ROOT%\Luajit64 .\Luajit64\

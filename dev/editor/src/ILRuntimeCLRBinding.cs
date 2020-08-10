@@ -4,11 +4,11 @@ using UnityEngine;
 using System;
 using System.Text;
 using System.Collections.Generic;
-// using ILRuntimeDemo;
+
 [System.Reflection.Obfuscation(Exclude = true)]
 public class ILRuntimeCLRBinding
 {
-   [MenuItem("ILRuntime/通过自动分析热更DLL生成CLR绑定")]
+    [MenuItem("ILRuntime/通过自动分析热更DLL生成CLR绑定")]
     static void GenerateCLRBindingByAnalysis()
     {
         //用新的分析热更dll调用引用来生成绑定代码
@@ -19,7 +19,7 @@ public class ILRuntimeCLRBinding
 
             //Crossbind Adapter is needed to generate the correct binding code
             InitILRuntime(domain);
-            ILRuntime.Runtime.CLRBinding.BindingCodeGenerator.GenerateBindingCode(domain, "E:/workspace_git/ilrvstl/dev/embed/ILRuntime/Generated");
+            ILRuntime.Runtime.CLRBinding.BindingCodeGenerator.GenerateBindingCode(domain, "E:/workspace_git/ilrvstl/dev/embed/Generated");
         }
 
         AssetDatabase.Refresh();
@@ -28,9 +28,10 @@ public class ILRuntimeCLRBinding
     static void InitILRuntime(ILRuntime.Runtime.Enviorment.AppDomain domain)
     {
         //这里需要注册所有热更DLL中用到的跨域继承Adapter，否则无法正确抓取引用
-        // domain.RegisterCrossBindingAdaptor(new MonoBehaviourAdapter());
-        // domain.RegisterCrossBindingAdaptor(new CoroutineAdapter());
-        // domain.RegisterCrossBindingAdaptor(new TestClassBaseAdapter());
+        domain.RegisterCrossBindingAdaptor(new MonoBehaviourAdapter());
+        domain.RegisterCrossBindingAdaptor(new CoroutineAdapter());
+        domain.RegisterValueTypeBinder(typeof(Quaternion), new QuaternionBinder());
+        domain.RegisterValueTypeBinder(typeof(Vector2), new Vector2Binder());
         domain.RegisterValueTypeBinder(typeof(Vector3), new Vector3Binder());
     }
 }
