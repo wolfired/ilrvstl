@@ -69,3 +69,23 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# Custom
+/Assets/Editor/Plugins/editor.*
+/Assets/Plugins/embed.*
+/Assets/Plugins/ILRuntim.Mono.Cecil.*
+/Assets/Plugins/ILRuntime.Mono.Cecil.Mdb.*
+/Assets/Plugins/ILRuntime.Mono.Cecil.Pdb.*
+
+/bin/
+/dev/*/bin/
+/dev/*/obj/
+/dev/*/Dependencies/
+/dev/*/ILRuntime/
+
+/out/
+
+/tools/nginx/contrib
+/tools/nginx/docs
+/tools/nginx/logs
+/tools/nginx/temp
