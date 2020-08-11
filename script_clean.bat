@@ -4,10 +4,29 @@ if not exist %DEV_ROOT%\dev.sln (
     exit 0
 )
 
+::
+if exist %DEV_ROOT%\*.sln (
+    del %DEV_ROOT%\*.sln
+)
+
 if exist %BIN_ROOT% (
     rmdir /S /Q %BIN_ROOT%
 )
 
+::
+if exist %PRJ_EXTER%\bin (
+    rmdir /S /Q %PRJ_EXTER%\bin
+)
+
+if exist %PRJ_EXTER%\obj (
+    rmdir /S /Q %PRJ_EXTER%\obj
+)
+
+if exist %PRJ_EXTER%\*.csproj (
+    del %PRJ_EXTER%\*.csproj
+)
+
+::
 if exist %PRJ_EMBED%\bin (
     rmdir /S /Q %PRJ_EMBED%\bin
 )
@@ -20,6 +39,7 @@ if exist %PRJ_EMBED%\*.csproj (
     del %PRJ_EMBED%\*.csproj
 )
 
+::
 if exist %PRJ_CORE%\bin (
     rmdir /S /Q %PRJ_CORE%\bin
 )
@@ -32,6 +52,7 @@ if exist %PRJ_CORE%\*.csproj (
     del %PRJ_CORE%\*.csproj
 )
 
+::
 if exist %PRJ_EDITOR%\bin (
     rmdir /S /Q %PRJ_EDITOR%\bin
 )
@@ -44,10 +65,7 @@ if exist %PRJ_EDITOR%\*.csproj (
     del %PRJ_EDITOR%\*.csproj
 )
 
-if exist %DEV_ROOT%\*.sln (
-    del %DEV_ROOT%\*.sln
-)
-
+::
 if exist .\Assets\Source (
     rmdir /S /Q .\Assets\Source
 )

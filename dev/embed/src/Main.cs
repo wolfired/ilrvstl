@@ -77,6 +77,7 @@ namespace embed
         private IEnumerator LoadAndInitCore()
         {
             Debug.Log("download dll from " + url);
+
             UnityWebRequest www_dll = UnityWebRequest.Get(String.Join("/", new string[] { url, "core.dll" }));
             yield return www_dll.SendWebRequest();
             _fs = new MemoryStream(www_dll.downloadHandler.data);
@@ -88,11 +89,12 @@ namespace embed
             _vm = new ILRuntime.Runtime.Enviorment.AppDomain();
             _vm.LoadAssembly(_fs, null, new ILRuntime.Mono.Cecil.Pdb.PdbReaderProvider());
 
-            ILRuntime.Runtime.Generated.CLRBindings.Initialize(_vm);
-
             _vm.RegisterValueTypeBinder(typeof(Vector3), new Vector3Binder());
             _vm.RegisterValueTypeBinder(typeof(Quaternion), new QuaternionBinder());
             _vm.RegisterValueTypeBinder(typeof(Vector2), new Vector2Binder());
+
+            // 先注释以下代码, 编译core.dll, 生成clr绑定代码后, 解注重新构建
+            ILRuntime.Runtime.Generated.CLRBindings.Initialize(_vm);
         }
 
         public void Test0()

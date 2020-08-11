@@ -8,6 +8,7 @@ set TOLUA_ROOT=.\tolua
 set BIN_ROOT=.\bin
 set DEV_ROOT=.\dev
 
-set PRJ_EDITOR= %DEV_ROOT%\editor
+set PRJ_EXTER= %DEV_ROOT%\exter
 set PRJ_EMBED= %DEV_ROOT%\embed
 set PRJ_CORE= %DEV_ROOT%\core
+set PRJ_EDITOR= %DEV_ROOT%\editor
