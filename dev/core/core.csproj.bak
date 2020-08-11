@@ -191,13 +191,13 @@
       <HintPath>D:/Unity.2019.4.6f1/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>E:/workspace_git/ilrvstl/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>../../Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>E:/workspace_git/ilrvstl/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>../../Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>E:/workspace_git/ilrvstl/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>../../Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
   </ItemGroup>
 

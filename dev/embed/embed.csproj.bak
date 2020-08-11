@@ -191,22 +191,22 @@
       <HintPath>D:/Unity.2019.4.6f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
     </Reference>
     <Reference Include="ILRuntim.Mono.Cecil">
-      <HintPath>E:/workspace_git/ilrvstl/Assets/Plugins/ILRuntim.Mono.Cecil.dll</HintPath>
+      <HintPath>../../Assets/Plugins/ILRuntim.Mono.Cecil.dll</HintPath>
     </Reference>
     <Reference Include="ILRuntime.Mono.Cecil.Mdb">
-      <HintPath>E:/workspace_git/ilrvstl/Assets/Plugins/ILRuntime.Mono.Cecil.Mdb.dll</HintPath>
+      <HintPath>../../Assets/Plugins/ILRuntime.Mono.Cecil.Mdb.dll</HintPath>
     </Reference>
     <Reference Include="ILRuntime.Mono.Cecil.Pdb">
-      <HintPath>E:/workspace_git/ilrvstl/Assets/Plugins/ILRuntime.Mono.Cecil.Pdb.dll</HintPath>
+      <HintPath>../../Assets/Plugins/ILRuntime.Mono.Cecil.Pdb.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>E:/workspace_git/ilrvstl/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>../../Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>E:/workspace_git/ilrvstl/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>../../Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>E:/workspace_git/ilrvstl/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>../../Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
   </ItemGroup>
 
